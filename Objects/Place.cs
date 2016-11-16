@@ -6,13 +6,15 @@ namespace TravelLog.Objects
   {
     private string _cityName;
     private string _description;
+    private string _photoFile;
     private int _id;
     private static List<Place> _instances = new List<Place> {};
 
-    public Place (string cityName, string description)
+    public Place (string cityName, string description, string photoFile)
     {
       _cityName = cityName;
       _description = description;
+      _photoFile = photoFile;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -24,6 +26,14 @@ namespace TravelLog.Objects
     public void SetCityName(string newCityName)
     {
       _cityName = newCityName;
+    }
+    public string GetPhotoFile()
+    {
+      return _photoFile;
+    }
+    public void SetPhotoFile(string newPhotoFile)
+    {
+      _photoFile = newPhotoFile;
     }
     public string GetCityDescription()
     {
