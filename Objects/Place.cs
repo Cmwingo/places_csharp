@@ -5,12 +5,14 @@ namespace TravelLog.Objects
   public class Place
   {
     private string _cityName;
+    private string _description;
     private int _id;
     private static List<Place> _instances = new List<Place> {};
 
-    public Place (string cityName)
+    public Place (string cityName, string description)
     {
       _cityName = cityName;
+      _description = description;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -23,7 +25,14 @@ namespace TravelLog.Objects
     {
       _cityName = newCityName;
     }
-
+    public string GetCityDescription()
+    {
+      return _description;
+    }
+    public void SetCityDescription(string newCityDescription)
+    {
+      _description = newCityDescription;
+    }
     public int GetId()
     {
       return _id;

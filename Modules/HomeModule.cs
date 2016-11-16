@@ -23,7 +23,7 @@ namespace TravelLog
         return View["place_form.cshtml"];
       };
       Post["/places"] = _ => {
-        Place newPlace = new Place (Request.Form["new-place-name"]);
+        Place newPlace = new Place (Request.Form["new-place-name"], Request.Form["new-place-description"]);
         List<Place> allPlaces = Place.GetAll();
         return View["places.cshtml", allPlaces];
       };
